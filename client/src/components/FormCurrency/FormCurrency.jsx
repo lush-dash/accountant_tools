@@ -22,6 +22,7 @@ export default function FormCurrency() {
           Сумма
         </Label>
         <Input
+          className="input"
           id="number"
           name="number"
           placeholder="0.00"
@@ -34,6 +35,7 @@ export default function FormCurrency() {
           Валюта
         </Label>
         <Input
+          className="input"
           id="currency"
           name="currency"
           type="select"
@@ -61,6 +63,7 @@ export default function FormCurrency() {
             name="language"
             type="radio"
             value="rus"
+            className="radio"
           />
           {' '}
           <Label check>
@@ -72,6 +75,7 @@ export default function FormCurrency() {
             name="language"
             type="radio"
             value="eng"
+            className="radio"
           />
           {' '}
           <Label check>

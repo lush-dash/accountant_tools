@@ -1,0 +1,25 @@
+.me-auto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+.navbar{
+    width: 80%;
+    margin: 0 auto;   
+}
+
+.purple {
+    color: #7600f8;
+    font-weight: bold;
+}
+
+.link{
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.link:hover{
+    color: #495057;
+}
