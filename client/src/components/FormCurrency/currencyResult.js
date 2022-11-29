@@ -11,12 +11,12 @@ export default async function countCurrencyResult(data) {
       localeCode: 'en-GB',
       converterOptions: {
         currency: true,
-        ignoreDecimal: false,
+        ignoreDecimal: true,
         ignoreZeroCurrency: false,
         doNotAddOnly: true,
         currencyOptions: {
-          name: 'Russian Ruble',
-          plural: 'Russian Rubles',
+          name: 'Ruble',
+          plural: 'Rubles',
           symbol: '₽',
           fractionalUnit: {
             name: 'Kopeck',
@@ -31,7 +31,7 @@ export default async function countCurrencyResult(data) {
       localeCode: 'en-GB',
       converterOptions: {
         currency: true,
-        ignoreDecimal: false,
+        ignoreDecimal: true,
         ignoreZeroCurrency: false,
         doNotAddOnly: true,
         currencyOptions: {
@@ -51,7 +51,7 @@ export default async function countCurrencyResult(data) {
       localeCode: 'en-GB',
       converterOptions: {
         currency: true,
-        ignoreDecimal: false,
+        ignoreDecimal: true,
         ignoreZeroCurrency: false,
         doNotAddOnly: true,
         currencyOptions: {
@@ -71,7 +71,7 @@ export default async function countCurrencyResult(data) {
       localeCode: 'en-GB',
       converterOptions: {
         currency: true,
-        ignoreDecimal: false,
+        ignoreDecimal: true,
         ignoreZeroCurrency: false,
         doNotAddOnly: true,
         currencyOptions: {
@@ -88,10 +88,27 @@ export default async function countCurrencyResult(data) {
     });
   }
 
-  const words = toWords.convert(data.number);
+  const decimal = (data.number - Math.trunc(data.number)).toFixed(2);
+
+  let decimalWithfractionalUnit;
+  if (decimal === 0) {
+    decimalWithfractionalUnit = `00 ${toWords.options.converterOptions.currencyOptions.fractionalUnit.plural}`;
+  } else if (decimal === 0.01) {
+    decimalWithfractionalUnit = `01 ${
+      toWords.options.converterOptions.currencyOptions.fractionalUnit.name}`;
+  } else {
+    decimalWithfractionalUnit = `${`${decimal}`.slice(-2)} ${
+      toWords.options.converterOptions.currencyOptions.fractionalUnit.plural}`;
+  }
+
+  const words = `${toWords.convert(Math.trunc(data.number))} ${decimalWithfractionalUnit}`;
+
+  if (data.language === 'eng') {
+    const result = { result: words.slice(0, 1) + words.slice(1).toLowerCase() };
+    return result;
+  }
 
   const translation = await translate(words, 'rus');
-
-  const result = { eng: words, rus: translation };
+  const result = { result: translation };
   return result;
 }

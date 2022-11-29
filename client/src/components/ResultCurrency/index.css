@@ -1,0 +1,14 @@
+.results-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height:5em;
+}
+
+.icon:hover {
+opacity: 0.5;
+}
+
+.grey{
+    color: grey;
+}
