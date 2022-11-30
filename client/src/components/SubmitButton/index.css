@@ -1,0 +1,14 @@
+.button{
+    color: #7600f8;
+    border-color: #7600f8;
+    }
+    
+    .button:hover{
+        background-color: #7600f8;
+        border-color: #7600f8;
+    }
+    
+    .button.btn.btn-outline-primary:active{
+        background-color: #7600f8;
+        border-color: #7600f8;
+    }

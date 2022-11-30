@@ -1,19 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import CopyIcon from '../CopyClipboard/CopyClipboard';
+// import CopyIcon from '../CopyClipboard/CopyClipboard';
 import './index.css';
 
 export default function ResultCurrency() {
-  const currencyResult = useSelector((state) => state.currencyResult);
+  const workingDays = useSelector((state) => state.workingDays);
 
   return (
     <div className="results-container">
-      {currencyResult.result ? (
+      {workingDays ? (
         <>
           <span>
-            {currencyResult.result}
+            {workingDays}
           </span>
-          <CopyIcon copy={currencyResult.result} />
+          <CopyIcon copy={workingDays} />
         </>
       ) : (
         <span className="grey">

@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  Button,
   Form, FormGroup, Input, Label,
 } from 'reactstrap';
 import { useDispatch } from 'react-redux';
 import countCurrencyResult from './currencyResult';
 import { setCurrencyResult } from '../../redux/actions/currencyResultActions';
 import './index.css';
+import SubmitButton from '../SubmitButton/SubmitButton';
 
 export default function FormCurrency() {
   const dispatch = useDispatch();
@@ -84,15 +84,7 @@ export default function FormCurrency() {
         </FormGroup>
       </FormGroup>
       <div className="button-container">
-        <Button
-          className="button"
-          type="submit"
-          color="primary"
-          outline
-        >
-          Перевести
-        </Button>
-
+        <SubmitButton text="Перевести" />
       </div>
     </Form>
   );
