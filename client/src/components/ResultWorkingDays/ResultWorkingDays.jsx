@@ -12,7 +12,7 @@ export default function ResultCurrency() {
       {workingDays ? (
         <>
           <span>
-            {workingDays}
+            {`Рабочих дней в выбранный период: ${workingDays}`}
           </span>
           <CopyIcon copy={workingDays} />
         </>

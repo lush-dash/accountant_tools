@@ -15,8 +15,9 @@
 }
 .tk-blob.pink {
   fill: var(--fill, #e91e63);
-  right: 10em;
-  top: -15em;
+  width: 15%;
+  right: -20em;
+  top: -10em;
 }
 
 
