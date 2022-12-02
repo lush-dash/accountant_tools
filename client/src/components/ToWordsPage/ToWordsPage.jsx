@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { Card } from 'reactstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import FormCurrency from '../FormCurrency/FormCurrency';
-import ResultCurrency from '../ResultCurrency/ResultCurrency';
-import './index.css';
+import Result from '../Result/Result';
 import Header from '../Header/Header';
 import Blob from '../Blob/Blob';
 import { clearCurrencyResult } from '../../redux/actions/currencyResultActions';
 
 export default function ToWordsPage() {
+  const currencyResult = useSelector((state) => state.currencyResult);
   const dispatch = useDispatch();
 
   useEffect(() => () => {
@@ -26,7 +26,7 @@ export default function ToWordsPage() {
         >
           <FormCurrency />
           <hr />
-          <ResultCurrency />
+          <Result result={currencyResult} />
         </Card>
       </div>
       <Blob shapeOption="a" colorOption="purple" position={{ right: '20em', top: '5em' }} />

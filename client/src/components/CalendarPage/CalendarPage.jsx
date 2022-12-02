@@ -3,15 +3,16 @@ import {
   Card, CardTitle, Form, Input,
 } from 'reactstrap';
 import dayjs from 'dayjs';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Header from '../Header/Header';
-import ResultWorkingDays from '../ResultWorkingDays/ResultWorkingDays';
+import Result from '../Result/Result';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import './index.css';
 import { clearWorkingDays, setWorkingDaysThunk } from '../../redux/actions/workingDaysActions';
 import Blob from '../Blob/Blob';
 
 export default function CalendarPage() {
+  const workingDays = useSelector((state) => state.workingDays);
   const dispatch = useDispatch();
 
   useEffect(() => () => {
@@ -44,12 +45,10 @@ export default function CalendarPage() {
               <Input name="startDate" type="date" />
               <Input name="endDate" type="date" />
             </div>
-            <div className="button-container">
-              <SubmitButton text="Подсчитать" />
-            </div>
+            <SubmitButton text="Подсчитать" />
           </Form>
           <hr />
-          <ResultWorkingDays />
+          <Result text="Количество рабочих дней: " result={workingDays} />
         </Card>
       </div>
       <Blob shapeOption="a" colorOption="pink" position={{ right: '23em', top: '1em' }} />

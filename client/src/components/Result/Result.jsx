@@ -1,19 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import CopyIcon from '../CopyClipboard/CopyClipboard';
 import './index.css';
 
-export default function ResultCurrency() {
-  const currencyResult = useSelector((state) => state.currencyResult);
-
+export default function Result({ text, result }) {
   return (
     <div className="results-container">
-      {currencyResult.result ? (
+      {result ? (
         <>
           <span>
-            {currencyResult.result}
+            {text ? text + result : result}
           </span>
-          <CopyIcon copy={currencyResult.result} />
+          <CopyIcon copy={result} />
         </>
       ) : (
         <span className="grey">
