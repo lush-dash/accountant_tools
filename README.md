@@ -1,10 +1,11 @@
 # accountantTools
+<span style="color:#7600f8">some *blue* text</span>
 
 accountantTools - это web-приложение, где собраны полезные инструменты для работы бухгалтера.
 
 ## Стек:
 
-Фронтенд: JavaScript, React, Redux(thunk), Axios, Reactstrap
+JavaScript, React, Redux(thunk), Axios, Reactstrap
 
 ## Функционал:
 
@@ -18,4 +19,4 @@ accountantTools - это web-приложение, где собраны пол�
 
 ## Сторонние API, используемые в проекте:
 - [isDayOff()] (https://www.isdayoff.ru/) 
-- [Google Translate](https://cloud.google.com/translate)
+- [Google Translate] (https://cloud.google.com/translate)
