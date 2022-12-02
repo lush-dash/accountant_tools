@@ -1,4 +1,10 @@
 # accountantTools
 
+accountantTools - это web-приложение, где собраны полезные инструменты для работы бухгалтера.
 
-Useful tools for accountants
+## Стек:
+
+Фронтенд: JavaScript, React, Redux(thunk), Axios, Reactstrap
+
+## Функционал:
+
