@@ -2,7 +2,7 @@ import { ToWords } from 'to-words';
 import translate from 'translate';
 
 translate.engine = 'google';
-translate.key = 'bd23f16262msh35b2d461efdeb66p18316bjsnc833ae556bfb';
+translate.key = process.env.GOOGLE_KEY;
 
 export default async function countCurrencyResult(data) {
   let toWords;
