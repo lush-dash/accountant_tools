@@ -27,5 +27,12 @@ npm start
 ```
 
 ## Стек
+[<img align="left" alt="JavaScript" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />]
+[<img align="left" alt="React" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />]
+[<img align="left" alt="Redux"  width="32px" src="https://img.icons8.com/color/48/000000/redux.png"/>][git]
+[<img align="left" alt="CSS3" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />]
+[<img align="left" alt="HTML5" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />]
+[<img align="left" alt="Node.js" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />]
+[<img align="left" alt="Reactstrap" width="32px" src="https://avatars.githubusercontent.com/u/17580417?s=280&v=4" />]
 
-JavaScript, React, Redux(thunk), Axios, Reactstrap
+JavaScript, React, Redux(thunk), CSS3, HTML5, Axios, Reactstrap
