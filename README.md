@@ -1,7 +1,6 @@
 # accountantTools
-<span style="color:red">some **This is Red Bold.** text</span>
 
-accountantTools - это web-приложение, где собраны полезные инструменты для работы бухгалтера.
+accountantTools - это web-приложение, где собраны полезные инструменты для работы бухгалтера, юриста, специалиста налоговой службы или кадровика.
 
 ## Стек:
 
