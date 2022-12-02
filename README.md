@@ -1,5 +1,5 @@
 # accountantTools
-<span style="color:purple">some *blue* text</span>
+<span style="color: purple">some *blue* text</span>
 
 accountantTools - это web-приложение, где собраны полезные инструменты для работы бухгалтера.
 
