@@ -104,11 +104,11 @@ export default async function countCurrencyResult(data) {
   const words = `${toWords.convert(Math.trunc(data.number))} ${decimalWithfractionalUnit}`;
 
   if (data.language === 'eng') {
-    const result = { result: words.slice(0, 1) + words.slice(1).toLowerCase() };
+    const result = words.slice(0, 1) + words.slice(1).toLowerCase();
     return result;
   }
 
   const translation = await translate(words, 'rus');
-  const result = { result: translation };
+  const result = translation;
   return result;
 }

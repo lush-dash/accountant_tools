@@ -83,9 +83,7 @@ export default function FormCurrency() {
           </Label>
         </FormGroup>
       </FormGroup>
-      <div className="button-container">
-        <SubmitButton text="Перевести" />
-      </div>
+      <SubmitButton text="Перевести" />
     </Form>
   );
 }

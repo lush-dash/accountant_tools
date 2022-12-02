@@ -4,13 +4,15 @@ import './index.css';
 
 export default function SubmitButton({ text }) {
   return (
-    <Button
-      className="button"
-      type="submit"
-      color="primary"
-      outline
-    >
-      {text}
-    </Button>
+    <div className="button-container">
+      <Button
+        className="button"
+        type="submit"
+        color="primary"
+        outline
+      >
+        {text}
+      </Button>
+    </div>
   );
 }
