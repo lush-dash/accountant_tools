@@ -17,5 +17,5 @@ JavaScript, React, Redux(thunk), Axios, Reactstrap
 Для получения результата пользователю необходимо ввести или выбрать даты и нажать кнопку. Возможно запросить информацию по периоду не более 366 дней.
 
 ## Сторонние API, используемые в проекте:
-- [isDayOff()] (https://www.isdayoff.ru/) 
-- [Google Translate] (https://cloud.google.com/translate)
+- [isDayOff()](https://www.isdayoff.ru/) 
+- [Google Translate](https://cloud.google.com/translate)
