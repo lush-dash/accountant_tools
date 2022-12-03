@@ -2,12 +2,8 @@
     display: flex;
 }
 
-Input{
+.date-input{
     margin: 5px;
     margin-top: 2em;
     margin-bottom: 2em;
-}
-
-h5{
-    text-align: center;
 }
