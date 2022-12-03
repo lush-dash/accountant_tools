@@ -22,10 +22,10 @@ function NavigationBar() {
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem className="item">
-                  <Link to="/calendar" className="link">Подсчет рабочих дней</Link>
+                  <Link to="/working-days" className="link">Подсчет рабочих дней</Link>
                 </DropdownItem>
                 <DropdownItem className="item">
-                  <Link to="/calendar" className="link">Вычисление даты</Link>
+                  <Link to="/date" className="link">Вычисление даты</Link>
                 </DropdownItem>
                 <DropdownItem className="item">
                   <Link to="/calendar" className="link">Производственный календарь</Link>
@@ -34,7 +34,7 @@ function NavigationBar() {
             </UncontrolledDropdown>
           </NavItem>
           <NavItem>
-            <Link to="/towords" className="link">
+            <Link to="/to-words" className="link">
               Сумма прописью
             </Link>
           </NavItem>
