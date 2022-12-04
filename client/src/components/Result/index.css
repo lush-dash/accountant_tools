@@ -8,3 +8,8 @@
 .grey{
     color: grey;
 }
+
+.results-span{
+    display: block;
+    max-width: 90%;
+}

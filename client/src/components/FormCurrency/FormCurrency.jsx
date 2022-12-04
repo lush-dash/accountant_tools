@@ -7,14 +7,20 @@ import countCurrencyResult from './currencyResult';
 import { setCurrencyResult } from '../../redux/actions/currencyResultActions';
 import './index.css';
 import SubmitButton from '../SubmitButton/SubmitButton';
+import { closeLoader, openLoader } from '../../redux/actions/resultsLoaderActions';
 
 export default function FormCurrency() {
   const dispatch = useDispatch();
   return (
     <Form onSubmit={async (e) => {
-      e.preventDefault();
-      const result = await countCurrencyResult(Object.fromEntries(new FormData(e.target)));
-      dispatch(setCurrencyResult(result));
+      try {
+        e.preventDefault();
+        // перенести в thunk
+        dispatch(openLoader());
+        const result = await countCurrencyResult(Object.fromEntries(new FormData(e.target)));
+        dispatch(setCurrencyResult(result));
+        // перенести в thunk
+      } catch (error) { console.log(error); } finally { dispatch(closeLoader()); }
     }}
     >
       <FormGroup>
@@ -22,6 +28,8 @@ export default function FormCurrency() {
           Сумма
         </Label>
         <Input
+        // отладить работу перевода в текст через максимальное
+        // количество введенных знаков в инпут. макс - 99999999999999.99
           className="input"
           id="number"
           name="number"

@@ -1,0 +1,8 @@
+.loader.spinner-border{
+    color: #7600f8;
+}
+.loader-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

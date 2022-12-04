@@ -15,12 +15,12 @@ function NavigationBar() {
           <span className="purple">Tools</span>
         </NavbarBrand>
         <Nav className="me-auto" navbar>
-          <NavItem>
+          <NavItem tag="span">
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle className="nav-item" nav caret>
                 Календарь
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu end>
                 <DropdownItem className="item">
                   <Link to="/working-days" className="link">Подсчет рабочих дней</Link>
                 </DropdownItem>

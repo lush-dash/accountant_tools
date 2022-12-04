@@ -1,3 +1,5 @@
+// перенести всю логику в redux thunk
+
 import { ToWords } from 'to-words';
 import translate from 'translate';
 
@@ -88,6 +90,7 @@ export default async function countCurrencyResult(data) {
     });
   }
 
+  // сделать функцией. Отследить ошибку с 99999999999999.99 и написать на нее тест
   const decimal = (data.number - Math.trunc(data.number)).toFixed(2);
 
   let decimalWithfractionalUnit;
