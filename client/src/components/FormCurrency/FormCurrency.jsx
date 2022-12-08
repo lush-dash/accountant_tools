@@ -3,39 +3,32 @@ import {
   Form, FormGroup, Input, Label,
 } from 'reactstrap';
 import { useDispatch } from 'react-redux';
-import countCurrencyResult from './currencyResult';
-import { setCurrencyResult } from '../../redux/actions/currencyResultActions';
+import { setCurrencyResultThunk } from '../../redux/actions/currencyResultActions';
 import './index.css';
 import SubmitButton from '../SubmitButton/SubmitButton';
-import { closeLoader, openLoader } from '../../redux/actions/resultsLoaderActions';
 
 export default function FormCurrency() {
   const dispatch = useDispatch();
+
+  function submitHandler(e) {
+    e.preventDefault();
+    dispatch(setCurrencyResultThunk(Object.fromEntries(new FormData(e.target))));
+  }
+
   return (
-    <Form onSubmit={async (e) => {
-      try {
-        e.preventDefault();
-        // перенести в thunk
-        dispatch(openLoader());
-        const result = await countCurrencyResult(Object.fromEntries(new FormData(e.target)));
-        dispatch(setCurrencyResult(result));
-        // перенести в thunk
-      } catch (error) { console.log(error); } finally { dispatch(closeLoader()); }
-    }}
-    >
+    <Form onSubmit={(e) => submitHandler(e)}>
       <FormGroup>
         <Label for="number">
           Сумма
         </Label>
         <Input
-        // отладить работу перевода в текст через максимальное
-        // количество введенных знаков в инпут. макс - 99999999999999.99
           className="input"
           id="number"
           name="number"
           placeholder="0.00"
           type="number"
           step=".01"
+          max="999999999999.99"
         />
       </FormGroup>
       <FormGroup>

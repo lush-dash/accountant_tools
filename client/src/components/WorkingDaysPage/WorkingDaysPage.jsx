@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import {
   Card, Form, Input,
 } from 'reactstrap';
-import dayjs from 'dayjs';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../Header/Header';
 import Result from '../Result/Result';
@@ -15,6 +14,11 @@ import CardForContentTitle from '../CardForContentTitle/CardForContentTitle';
 export default function WorkingDaysPage() {
   const workingDays = useSelector((state) => state.workingDays);
   const dispatch = useDispatch();
+
+  function submitHandler(e) {
+    e.preventDefault();
+    dispatch(setWorkingDaysThunk(Object.fromEntries(new FormData(e.target))));
+  }
 
   useEffect(() => () => {
     dispatch(clearWorkingDays());
@@ -30,16 +34,7 @@ export default function WorkingDaysPage() {
           style={{ width: '30em' }}
         >
           <CardForContentTitle title="Подсчет рабочих дней в выбранный период" />
-          <Form onSubmit={(e) => {
-            e.preventDefault();
-            const data = Object.fromEntries(new FormData(e.target));
-            const dates = {
-              startDate: dayjs(data.startDate).format('YYYYMMDD'),
-              endDate: dayjs(data.endDate).format('YYYYMMDD'),
-            };
-            dispatch(setWorkingDaysThunk(dates));
-          }}
-          >
+          <Form onSubmit={(e) => submitHandler(e)}>
             <div className="inputs-container">
               <Input className="date-input" name="startDate" type="date" />
               <Input className="date-input" name="endDate" type="date" />

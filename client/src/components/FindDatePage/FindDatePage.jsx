@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useDispatch } from 'react-redux';
 import {
   Card, FormGroup, Input, Label,
 } from 'reactstrap';
@@ -11,13 +10,6 @@ import SubmitButton from '../SubmitButton/SubmitButton';
 import './index.css';
 
 export default function FindDatePage() {
-  // const workingDays = useSelector((state) => state.workingDays);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => () => {
-  //   dispatch(clearWorkingDays());
-  // }, []);
-
   return (
     <div className="container">
       <div className="page-content">
