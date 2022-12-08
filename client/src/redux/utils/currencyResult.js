@@ -4,6 +4,11 @@ import translate from 'translate';
 translate.engine = 'google';
 translate.key = process.env.GOOGLE_KEY;
 
+// написать тесты
+function getDecimal(number) {
+  return (number - Math.trunc(number)).toFixed(2);
+}
+
 export default async function countCurrencyResult(data) {
   let toWords;
   if (data.currency === 'RUB') {
@@ -87,9 +92,7 @@ export default async function countCurrencyResult(data) {
       },
     });
   }
-
-  // сделать функцией. Отследить ошибку с 99999999999999.99 и написать на нее тест
-  const decimal = (data.number - Math.trunc(data.number)).toFixed(2);
+  const decimal = getDecimal(data.number);
 
   let decimalWithfractionalUnit;
   if (decimal === 0) {

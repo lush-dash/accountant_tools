@@ -22,14 +22,13 @@ export default function FormCurrency() {
           Сумма
         </Label>
         <Input
-        // отладить работу перевода в текст через максимальное
-        // количество введенных знаков в инпут. макс - 99999999999999.99
           className="input"
           id="number"
           name="number"
           placeholder="0.00"
           type="number"
           step=".01"
+          max="999999999999.99"
         />
       </FormGroup>
       <FormGroup>
