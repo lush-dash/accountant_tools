@@ -30,6 +30,7 @@ export default function WorkingDaysPage() {
           style={{ width: '30em' }}
         >
           <CardForContentTitle title="Подсчет рабочих дней в выбранный период" />
+          {/* вынести функцию наверх */}
           <Form onSubmit={(e) => {
             e.preventDefault();
             const data = Object.fromEntries(new FormData(e.target));

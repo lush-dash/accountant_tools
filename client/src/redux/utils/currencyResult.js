@@ -1,5 +1,3 @@
-// перенести всю логику в redux thunk
-
 import { ToWords } from 'to-words';
 import translate from 'translate';
 
