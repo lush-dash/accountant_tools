@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import currencyResultReducer from './reducers/currencyResultReducer';
+import numberInWordsReducer from './reducers/numberInWordsReducer';
 import workingDaysReducer from './reducers/workingDaysReducer';
 import resultsLoaderReducer from './reducers/resultsLoaderReducer';
 
 export default configureStore({
   reducer: {
-    currencyResult: currencyResultReducer,
+    numberInWords: numberInWordsReducer,
     workingDays: workingDaysReducer,
     resultsLoader: resultsLoaderReducer,
   },

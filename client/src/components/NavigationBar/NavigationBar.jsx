@@ -34,7 +34,7 @@ function NavigationBar() {
             </UncontrolledDropdown>
           </NavItem>
           <NavItem>
-            <Link to="/to-words" className="link">
+            <Link to="/number-to-words" className="link">
               Сумма прописью
             </Link>
           </NavItem>
