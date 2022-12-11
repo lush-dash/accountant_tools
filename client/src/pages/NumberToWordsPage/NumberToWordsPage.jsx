@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import { Card } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import FormCurrency from '../FormCurrency/FormCurrency';
-import Result from '../Result/Result';
-import Header from '../Header/Header';
-import Blob from '../Blob/Blob';
-import { clearCurrencyResult } from '../../redux/actions/currencyResultActions';
+import FormNumberToWords from '../../components/FormNumberToWords/FormNumberToWords';
+import Result from '../../components/Result/Result';
+import Header from '../../components/Header/Header';
+import Blob from '../../components/Blob/Blob';
+import { clearNumberInWords } from '../../redux/actions/numberInWordsActions';
 
 export default function ToWordsPage() {
-  const currencyResult = useSelector((state) => state.currencyResult);
+  const numberInWords = useSelector((state) => state.numberInWords);
   const dispatch = useDispatch();
 
   useEffect(() => () => {
-    dispatch(clearCurrencyResult());
+    dispatch(clearNumberInWords());
   }, []);
 
   return (
@@ -24,9 +24,9 @@ export default function ToWordsPage() {
           className="my-2"
           style={{ width: '30em' }}
         >
-          <FormCurrency />
+          <FormNumberToWords />
           <hr />
-          <Result result={currencyResult} />
+          <Result result={numberInWords} />
         </Card>
       </div>
       <Blob shapeOption="a" colorOption="purple" position={{ right: '20em', top: '5em' }} />

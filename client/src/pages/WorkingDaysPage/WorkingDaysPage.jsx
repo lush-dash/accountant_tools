@@ -3,13 +3,13 @@ import {
   Card, Form, Input,
 } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import Header from '../Header/Header';
-import Result from '../Result/Result';
-import SubmitButton from '../SubmitButton/SubmitButton';
+import Header from '../../components/Header/Header';
+import Result from '../../components/Result/Result';
+import SubmitButton from '../../components/SubmitButton/SubmitButton';
 import './index.css';
 import { clearWorkingDays, setWorkingDaysThunk } from '../../redux/actions/workingDaysActions';
-import Blob from '../Blob/Blob';
-import CardForContentTitle from '../CardForContentTitle/CardForContentTitle';
+import Blob from '../../components/Blob/Blob';
+import CardForContentTitle from '../../components/CardForContentTitle/CardForContentTitle';
 
 export default function WorkingDaysPage() {
   const workingDays = useSelector((state) => state.workingDays);

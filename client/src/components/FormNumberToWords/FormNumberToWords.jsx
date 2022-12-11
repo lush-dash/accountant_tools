@@ -3,16 +3,16 @@ import {
   Form, FormGroup, Input, Label,
 } from 'reactstrap';
 import { useDispatch } from 'react-redux';
-import { setCurrencyResultThunk } from '../../redux/actions/currencyResultActions';
+import { setNumberInWordsThunk } from '../../redux/actions/numberInWordsActions';
 import './index.css';
 import SubmitButton from '../SubmitButton/SubmitButton';
 
-export default function FormCurrency() {
+export default function FormNumberToWords() {
   const dispatch = useDispatch();
 
   function submitHandler(e) {
     e.preventDefault();
-    dispatch(setCurrencyResultThunk(Object.fromEntries(new FormData(e.target))));
+    dispatch(setNumberInWordsThunk(Object.fromEntries(new FormData(e.target))));
   }
 
   return (
@@ -29,6 +29,7 @@ export default function FormCurrency() {
           type="number"
           step=".01"
           max="999999999999.99"
+          min="0"
         />
       </FormGroup>
       <FormGroup>

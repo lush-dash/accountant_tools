@@ -2,11 +2,11 @@ import React from 'react';
 import {
   Card, FormGroup, Input, Label,
 } from 'reactstrap';
-import Blob from '../Blob/Blob';
-import CardForContentTitle from '../CardForContentTitle/CardForContentTitle';
-import Header from '../Header/Header';
-import Result from '../Result/Result';
-import SubmitButton from '../SubmitButton/SubmitButton';
+import Blob from '../../components/Blob/Blob';
+import CardForContentTitle from '../../components/CardForContentTitle/CardForContentTitle';
+import Header from '../../components/Header/Header';
+import Result from '../../components/Result/Result';
+import SubmitButton from '../../components/SubmitButton/SubmitButton';
 import './index.css';
 
 export default function FindDatePage() {
