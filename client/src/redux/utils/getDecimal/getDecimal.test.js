@@ -21,7 +21,7 @@ describe('Tests for getDecimal', () => {
     });
     test('Numbers on borders', () => {
       a = 0;
-      b = 999999999.99;
+      b = 999999999999.99;
       c = 6.456;
       expect(getDecimal(a)).toBe('0.00');
       expect(getDecimal(b)).toBe('0.99');

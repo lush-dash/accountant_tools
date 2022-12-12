@@ -6,7 +6,9 @@ translate.engine = 'google';
 translate.key = process.env.GOOGLE_KEY;
 
 export default async function convertToWords(data) {
-  if (!(Number(data.number) >= 0 && Number(data.number) <= 999999999999.99)) {
+  const numberFromInput = Number(data.number);
+
+  if (!(numberFromInput >= 0 && numberFromInput <= 999999999999.99)) {
     throw new Error('Invalid input');
   }
   try {
@@ -40,8 +42,8 @@ export default async function convertToWords(data) {
           ignoreZeroCurrency: false,
           doNotAddOnly: true,
           currencyOptions: {
-            name: 'U.S. Dollar',
-            plural: 'U.S. Dollars',
+            name: 'Dollar',
+            plural: 'Dollars',
             symbol: '$',
             fractionalUnit: {
               name: 'Cent',
@@ -60,8 +62,8 @@ export default async function convertToWords(data) {
           ignoreZeroCurrency: false,
           doNotAddOnly: true,
           currencyOptions: {
-            name: 'Pound Sterling',
-            plural: 'Pounds Sterling',
+            name: 'Pound',
+            plural: 'Pounds',
             symbol: '£',
             fractionalUnit: {
               name: 'Penny',
@@ -92,7 +94,7 @@ export default async function convertToWords(data) {
         },
       });
     }
-    const decimal = getDecimal(Number(data.number));
+    const decimal = getDecimal(numberFromInput);
 
     let decimalWithfractionalUnit;
     if (decimal === '0.00') {
@@ -105,7 +107,17 @@ export default async function convertToWords(data) {
         toWords.options.converterOptions.currencyOptions.fractionalUnit.plural}`;
     }
 
-    const words = `${toWords.convert(Math.trunc(data.number))} ${decimalWithfractionalUnit}`;
+    let words;
+
+    if (numberFromInput > 0 && numberFromInput < 2) {
+      const wordsWithPluralCurrency = `${toWords.convert(Math.trunc(numberFromInput))} ${decimalWithfractionalUnit}`;
+      words = wordsWithPluralCurrency.replace(
+        toWords.options.converterOptions.currencyOptions.plural,
+        toWords.options.converterOptions.currencyOptions.name,
+      );
+    } else {
+      words = `${toWords.convert(Math.trunc(numberFromInput))} ${decimalWithfractionalUnit}`;
+    }
 
     if (data.language === 'eng') {
       const result = words.slice(0, 1) + words.slice(1).toLowerCase();
@@ -118,5 +130,3 @@ export default async function convertToWords(data) {
     throw new Error(error);
   }
 }
-
-convertToWords(-1).then(console.log).catch(console.log);
