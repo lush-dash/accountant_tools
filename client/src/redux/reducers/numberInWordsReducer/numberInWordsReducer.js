@@ -1,4 +1,4 @@
-import { CLEAR_NUMBER_IN_WORDS, SET_NUMBER_IN_WORDS } from '../types';
+import { CLEAR_NUMBER_IN_WORDS, SET_NUMBER_IN_WORDS } from '../../types';
 
 export default function numberInWordsReducer(state = '', action) {
   const { type, payload } = action;

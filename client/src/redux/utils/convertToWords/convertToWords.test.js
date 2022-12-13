@@ -14,9 +14,9 @@ describe('Tests for convertToWords', () => {
       a = { number: '10.56', currency: 'GBP', language: 'eng' };
       b = { number: '' };
       const resultA = await convertToWords(a);
-      //   const resultB = await convertToWords(b);
+      const resultB = await convertToWords(b);
       expect(resultA).toBe('Ten pounds 56 pence');
-    //   expect(resultB).toBe('Ноль рублей 00 копеек');
+      expect(resultB).toBe('Ноль рублей 00 копеек');
     });
     test('Incorrect argument', async () => {
       a = { number: 'test', currency: 'test', language: 'test' };
@@ -48,7 +48,7 @@ describe('Tests for convertToWords', () => {
       await expect(() => convertToWords(a)).rejects.toThrow('Invalid input');
       await expect(() => convertToWords(b)).rejects.toThrow('Invalid input');
     });
-    test.skip('Translator to Russian', async () => {
+    test('Translator to Russian', async () => {
       a = { number: '1.45', currency: 'USD', language: 'rus' };
       b = { number: '178.01', currency: 'GBP', language: 'rus' };
       c = { number: '5', currency: 'RUB', language: 'rus' };
