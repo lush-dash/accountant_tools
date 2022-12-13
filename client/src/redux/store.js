@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import numberInWordsReducer from './reducers/numberInWordsReducer';
+import numberInWordsReducer from './reducers/numberInWordsReducer/numberInWordsReducer';
 import workingDaysReducer from './reducers/workingDaysReducer';
 import resultsLoaderReducer from './reducers/resultsLoaderReducer';
 

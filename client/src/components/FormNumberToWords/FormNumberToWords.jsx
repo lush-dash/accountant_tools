@@ -65,10 +65,11 @@ export default function FormNumberToWords() {
             name="language"
             type="radio"
             value="rus"
+            id="rus"
             className="radio"
           />
           {' '}
-          <Label check>
+          <Label for="rus" check>
             Русский
           </Label>
         </FormGroup>
@@ -78,9 +79,10 @@ export default function FormNumberToWords() {
             type="radio"
             value="eng"
             className="radio"
+            id="eng"
           />
           {' '}
-          <Label check>
+          <Label for="eng" check>
             Английский
           </Label>
         </FormGroup>

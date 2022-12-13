@@ -16,10 +16,10 @@ export default function Result({ text, result }) {
   }
 
   return (
-    <div className="results-container">
+    <div data-testid="results-container" className="results-container">
       {result ? (
         <>
-          <span className="results-span">
+          <span data-testid="results-span" className="results-span">
             {text ? text + result : result}
           </span>
           <CopyIcon copy={result} />

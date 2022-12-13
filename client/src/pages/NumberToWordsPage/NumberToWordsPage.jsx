@@ -16,7 +16,7 @@ export default function ToWordsPage() {
   }, []);
 
   return (
-    <div className="container">
+    <div data-testid="number-to-words-page" className="container">
       <div className="page-content">
         <Header header="Сумма прописью" />
         <Card
