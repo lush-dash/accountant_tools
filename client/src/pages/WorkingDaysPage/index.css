@@ -1,0 +1,10 @@
+.inputs-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-input{
+    margin-bottom: 2em;
+    margin-top: 1em;
+    max-width: 13.5em;
+}

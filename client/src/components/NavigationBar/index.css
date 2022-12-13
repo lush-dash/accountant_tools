@@ -7,7 +7,8 @@
 
 .navbar{
     width: 80%;
-    margin: 0 auto;   
+    margin: 0 auto;
+    z-index: 3;  
 }
 
 .purple {
@@ -22,4 +23,26 @@
 
 .link:hover{
     color: #495057;
+}
+
+.navbar-nav .show>.nav-link{
+    color: #495057;
+}
+
+.dropdown-toggle.nav-link{
+padding: 0;
+color: #6c757d;
+}
+
+.item.dropdown-item:active{
+    background-color: #e9ecef;
+    color: white;
+}
+
+.dropdown.nav-item{
+    position: relative;
+}
+
+.dropdown-menu.dropdown-menu-end.show{
+    position: absolute;
 }
