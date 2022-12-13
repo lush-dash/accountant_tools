@@ -27,6 +27,7 @@ export default function Blob({
   const size = {
     small: '15%',
     big: '40%',
+    huge: '60%',
   };
 
   return (

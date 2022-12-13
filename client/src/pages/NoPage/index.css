@@ -1,5 +1,18 @@
-.image-container{
-    width: 100%;
+.error-message-container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10em;
+    z-index: 2;
+    color: white;
+}
+
+.error-header{
+    font-size: 7em;
+}
+
+.error-text{
+    font-size: 1.5em;
 }
