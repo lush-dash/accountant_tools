@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Navbar, NavbarBrand, Nav, NavItem, UncontrolledDropdown,
   DropdownToggle, DropdownMenu, DropdownItem,
@@ -7,6 +7,8 @@ import {
 import './index.css';
 
 function NavigationBar() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Navbar className="navbar">
@@ -21,14 +23,14 @@ function NavigationBar() {
                 Календарь
               </DropdownToggle>
               <DropdownMenu end>
-                <DropdownItem className="item">
-                  <Link to="/working-days" className="link">Подсчет рабочих дней</Link>
+                <DropdownItem className="item" onClick={() => navigate('/working-days')}>
+                  <span className="link">Подсчет рабочих дней</span>
                 </DropdownItem>
-                <DropdownItem className="item">
-                  <Link to="/date" className="link">Вычисление даты</Link>
+                <DropdownItem className="item" onClick={() => navigate('/date')}>
+                  <span to="/date" className="link">Вычисление даты</span>
                 </DropdownItem>
-                <DropdownItem className="item">
-                  <Link to="/calendar" className="link">Производственный календарь</Link>
+                <DropdownItem className="item" onClick={() => navigate('/calendar')}>
+                  <span className="link">Производственный календарь</span>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
