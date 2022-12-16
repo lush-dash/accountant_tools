@@ -52,6 +52,18 @@ export default function FindDatePage() {
                 Считать только рабочие дни
               </Label>
             </FormGroup>
+            <FormGroup>
+              <Input
+                name="startDateIncluded"
+                type="checkbox"
+                value
+                className="checkbox"
+              />
+              {' '}
+              <Label>
+                Дата начала отсчета включительно
+              </Label>
+            </FormGroup>
             <SubmitButton text="Вычислить" />
           </Form>
           <hr />
