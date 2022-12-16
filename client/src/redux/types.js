@@ -9,3 +9,7 @@ export const CLEAR_WORKING_DAYS = 'CLEAR_WORKING_DAYS';
 // resultsLoader
 export const OPEN_LOADER = 'OPEN_LOADER';
 export const CLOSE_LOADER = 'CLOSE_LOADER';
+
+// date
+export const SET_DATE = 'SET_DATE';
+export const CLEAR_DATE = 'CLEAR_DATE ';
