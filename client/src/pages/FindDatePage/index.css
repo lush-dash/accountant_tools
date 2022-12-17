@@ -22,3 +22,9 @@
     border-color: #7600f8;
     border-color: #7600f8;
 }
+
+.checkboxes-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
