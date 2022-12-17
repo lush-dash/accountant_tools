@@ -13,10 +13,10 @@ export const setWorkingDaysThunk = (data) => async (dispatch) => {
       startDate: dayjs(data.startDate).format('YYYYMMDD'),
       endDate: dayjs(data.endDate).format('YYYYMMDD'),
     };
-    const res = await axios.get(`https://isdayoff.ru/api/getdata?date1=${dates.startDate}&date2=${dates.endDate}&cc=ru&pre=1&delimeter=&covid=0&sd=0`);
-    const str = JSON.stringify(res.data);
-    const arr = str.split('');
-    const filteredArr = arr.filter((el) => el === '0' || el === '2');
+    const res = await axios.get(`https://isdayoff.ru/api/getdata?date1=${dates.startDate}&date2=${dates.endDate}&cc=ru&delimeter=/&covid=0&sd=0`);
+    const str = res.data.toString();
+    const arr = str.split('/');
+    const filteredArr = arr.filter((el) => el === '0');
     const result = JSON.stringify(filteredArr.length);
     dispatch(setWorkingDays(result));
   } catch (e) {

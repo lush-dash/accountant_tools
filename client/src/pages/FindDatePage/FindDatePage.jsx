@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  Card, Form, FormGroup, Input, Label,
+  Card, Form, Input, Label,
 } from 'reactstrap';
 import Blob from '../../components/Blob/Blob';
 import CardForContentTitle from '../../components/CardForContentTitle/CardForContentTitle';
@@ -12,12 +12,12 @@ import { clearDate, findDateThunk } from '../../redux/actions/dateActions';
 import './index.css';
 
 export default function FindDatePage() {
+  const checkboxes = [['workingDays', 'Считать только рабочие дни'], ['startDateIncluded', 'Дата начала отсчета включительно'], ['lastDateIncluded', 'Дата окончания отсчета включительно']];
   const dispatch = useDispatch();
   const date = useSelector((state) => state.date);
 
   function submitHandler(e) {
     e.preventDefault();
-    console.log(Object.fromEntries(new FormData(e.target)));
     dispatch(findDateThunk(Object.fromEntries(new FormData(e.target))));
   }
 
@@ -39,31 +39,23 @@ export default function FindDatePage() {
             <Label for="startDate">Дата начала отсчета</Label>
             <Input className="single-date-input" name="startDate" type="date" />
             <Label for="days">Количество дней</Label>
-            <Input className="days-input" name="days" type="number" placeholder="0" />
-            <FormGroup>
-              <Input
-                name="workingDays"
-                type="checkbox"
-                value
-                className="checkbox"
-              />
-              {' '}
-              <Label>
-                Считать только рабочие дни
-              </Label>
-            </FormGroup>
-            <FormGroup>
-              <Input
-                name="startDateIncluded"
-                type="checkbox"
-                value
-                className="checkbox"
-              />
-              {' '}
-              <Label>
-                Дата начала отсчета включительно
-              </Label>
-            </FormGroup>
+            <Input className="days-input" name="days" type="number" min="0" max="365" placeholder="0" />
+            <div className="checkboxes-container">
+              {checkboxes.map((el) => (
+                <div key={el[0]} className="checkbox-container">
+                  <Input
+                    name={el[0]}
+                    type="checkbox"
+                    value
+                    className="checkbox"
+                  />
+                  {' '}
+                  <Label>
+                    {el[1]}
+                  </Label>
+                </div>
+              ))}
+            </div>
             <SubmitButton text="Вычислить" />
           </Form>
           <hr />
